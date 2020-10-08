@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   padding: 0;
@@ -6,11 +10,21 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+body {
+  height: 100vh;
+}
+
+/* Avoid Chrome to see Safari hack*/
+@supports (-webkit-touch-callout: none) {
+  body {
+    /* The hack fot Safari */
+    height: -webkit-fill-available;
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
-}
+
