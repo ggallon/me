@@ -11,15 +11,13 @@ body {
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
 }
 
-/* Avoid Chrome to see Safari hack*/
+/* Avoid Chrome to see Safari hack */
 @supports (-webkit-touch-callout: none) {
-  body {
-    /* The hack fot Safari */
-    height: -webkit-fill-available;
-  }
+  body { min-height: -webkit-fill-available; }
+  html { height: -webkit-fill-available; }
 }
 
 a {
