@@ -42,3 +42,10 @@
   line-height: 1.5;
   font-size: 1.5rem;
 }
+
+@media (max-width: 450px) {
+  .main {
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+  }
+}
