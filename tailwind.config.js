@@ -11,6 +11,7 @@ module.exports = {
     ],
     options: {
       keyframes: true,
+      whitelist: ['html', 'body', 'main', 'h1'],
     },
   },
   theme: {},
