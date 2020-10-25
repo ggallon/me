@@ -9,8 +9,8 @@
   },
   "dependencies": {
     "next": "9.5.6-canary.14",
-    "react": "16.14.0",
-    "react-dom": "16.14.0"
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
   },
   "devDependencies": {
     "@tailwindcss/ui": "0.6.2",
