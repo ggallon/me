@@ -1,4 +1,4 @@
-import 'styles/globals.css'
+import 'styles/index.css'
 
 export function reportWebVitals(metric) {
 	const body = JSON.stringify(metric)
