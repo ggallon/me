@@ -1,4 +1,4 @@
-import 'styles/index.css'
+import '@assets/index.css'
 
 const Noop = ({ children }) => <>{children}</>
 
