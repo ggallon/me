@@ -6,6 +6,7 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>Gwenaël Gallon</title>
+        <meta name="description" content="Gwenaël Gallon Site -> https://gwenaelgallon.fr" />
       </Head>
 
       <main className={styles.main}>
