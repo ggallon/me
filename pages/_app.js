@@ -1,12 +1,15 @@
 import 'styles/index.css'
 
-export function reportWebVitals(metric) {
-	const body = JSON.stringify(metric)
-	console.log('body', metric)
-}
+const Noop = ({ children }) => <>{children}</>
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  const Layout = Component.Layout || Noop
+
+  return (
+    <Layout pageProps={pageProps}>
+      <Component {...pageProps} />
+    </Layout>
+  )
 }
 
 export default MyApp
