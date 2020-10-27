@@ -1,0 +1,4 @@
+# robots.txt for https://gwenaelgallon.fr/
+
+User-agent: *
+Disallow: /api
