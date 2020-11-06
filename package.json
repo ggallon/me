@@ -8,13 +8,13 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "10.0.0",
+    "next": "10.0.1",
     "react": "17.0.1",
     "react-dom": "17.0.1"
   },
   "devDependencies": {
-    "@tailwindcss/ui": "0.6.2",
-    "postcss-flexbugs-fixes": "4.2.1",
+    "@tailwindcss/ui": "0.7.2",
+    "postcss-flexbugs-fixes": "5.0.0",
     "postcss-preset-env": "6.7.0",
     "tailwindcss": "1.9.6"
   }
