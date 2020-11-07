@@ -7,7 +7,7 @@ module.exports = {
     preserveHtmlElements: false,
     content: [
       './components/**/*.{js,ts,jsx,tsx}',
-      './pages/**/*.{js,ts,jsx,tsx}'
+      './pages/**/*.{js,ts,jsx,tsx}',
     ],
     options: {
       keyframes: true,
@@ -16,7 +16,5 @@ module.exports = {
   },
   theme: {},
   variants: {},
-  plugins: [
-    require('@tailwindcss/ui'),
-  ],
+  plugins: [require('@tailwindcss/ui')],
 }

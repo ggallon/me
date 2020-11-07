@@ -8,7 +8,8 @@ module.exports = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: "base-uri 'self'; script-src 'self' vitals.vercel-analytics.com",
+            value:
+              "base-uri 'self'; script-src 'self' vitals.vercel-analytics.com",
           },
           {
             key: 'X-Frame-Options',
@@ -25,5 +26,5 @@ module.exports = {
         ],
       },
     ]
-  }
+  },
 }
