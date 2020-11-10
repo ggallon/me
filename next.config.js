@@ -8,7 +8,7 @@ module.exports = bundleAnalyzer({
   async headers() {
     return [
       {
-        source: '/',
+        source: '/(.*)',
         headers: [
           {
             key: 'Content-Security-Policy',
@@ -26,6 +26,15 @@ module.exports = bundleAnalyzer({
           {
             key: 'X-Content-Type-Options',
             value: 'nosniff',
+          },
+        ],
+      },
+      {
+        source: '/_next/static/(.*)',
+        headers: [
+          {
+            key: 'Vary',
+            value: "Accept-Encoding",
           },
         ],
       },
