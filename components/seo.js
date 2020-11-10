@@ -2,7 +2,7 @@ import Head from 'next/head'
 
 export default function SEO() {
   const title = 'Gwenaël Gallon'
-  const description = 'Personal website for Gwenaël Gallon'
+  const description = 'Entrepreneur enthousiaste, optimisation des organisations, et créateur de valeur'
 
   return (
     <Head>
