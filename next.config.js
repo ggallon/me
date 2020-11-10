@@ -34,7 +34,7 @@ module.exports = bundleAnalyzer({
         headers: [
           {
             key: 'Vary',
-            value: "Accept-Encoding",
+            value: 'Accept-Encoding',
           },
         ],
       },
