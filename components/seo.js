@@ -1,6 +1,7 @@
 import Head from 'next/head'
 
 export default function SEO() {
+  const twitterAccount = '@gwengallon'
   const title = 'Gwenaël Gallon'
   const description = 'Entrepreneur enthousiaste, optimisation des organisations, et créateur de valeur'
 
@@ -8,6 +9,9 @@ export default function SEO() {
     <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content={twitterAccount} />
+      <meta name="twitter:creator" content={twitterAccount} />
       <meta property="og:title" content={title} />
       <meta property="og:type" content="website" />
       <meta property="og:description" content={description} />
