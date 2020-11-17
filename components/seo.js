@@ -20,6 +20,7 @@ export default function SEO() {
       <meta property="og:image" content="https://gwenaelgallon.fr/og.png" />
       <meta property="og:image:width" content="1280" />
       <meta property="og:image:height" content="720" />
+      <meta name="theme-color" content="#ffffff"/>
       <link
         rel="apple-touch-icon"
         sizes="180x180"
