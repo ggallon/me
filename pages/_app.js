@@ -1,14 +1,19 @@
+import { ThemeProvider } from 'next-themes'
+
 import '@assets/main.css'
 
 const Noop = ({ children }) => <>{children}</>
 
 function MyApp({ Component, pageProps }) {
   const Layout = Component.Layout || Noop
+  const Theme = Component.Theme || undefined
 
   return (
-    <Layout pageProps={pageProps}>
-      <Component {...pageProps} />
-    </Layout>
+    <ThemeProvider forcedTheme={Theme} attribute="class" >
+      <Layout pageProps={pageProps}>
+        <Component {...pageProps} />
+      </Layout>
+    </ThemeProvider>
   )
 }
 
