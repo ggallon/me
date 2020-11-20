@@ -45,6 +45,10 @@ module.exports = bundleAnalyzer({
             value: getCsp(),
           },
           {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin',
+          },
+          {
             key: 'X-Frame-Options',
             value: 'sameorigin',
           },
