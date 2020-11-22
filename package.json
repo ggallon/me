@@ -8,6 +8,12 @@
     "start": "next start",
     "analyze": "BUNDLE_ANALYZE=both yarn build"
   },
+  "browserslist": [
+    ">0.3%",
+    "not ie 11",
+    "not dead",
+    "not op_mini all"
+  ],
   "dependencies": {
     "next": "10.0.2",
     "next-themes": "0.0.10",
