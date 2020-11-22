@@ -32,41 +32,30 @@ function getCsp() {
   return csp;
 }
 
-const pathHeaders = [
-  {
-    key: 'Content-Security-Policy',
-    value: getCsp(),
-  },
-  {
-    key: 'Referrer-Policy',
-    value: 'strict-origin-when-cross-origin',
-  },
-  {
-    key: 'X-Frame-Options',
-    value: 'sameorigin',
-  },
-  {
-    key: 'X-Xss-Protection',
-    value: '1; mode=block',
-  },
-]
-
 module.exports = bundleAnalyzer({
   reactStrictMode: true,
 
   async headers() {
     return [
       {
-        source: '/',
-        headers: pathHeaders,
-      },
-      {
-        source: '/:path*',
-        headers: pathHeaders,
-      },
-      {
         source: '/(.*)',
         headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: getCsp(),
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin',
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'sameorigin',
+          },
+          {
+            key: 'X-Xss-Protection',
+            value: '1; mode=block',
+          },
           {
             key: 'X-Content-Type-Options',
             value: 'nosniff',
