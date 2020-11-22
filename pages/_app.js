@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
   const Theme = Component.Theme || undefined
 
   return (
-    <ThemeProvider defaultTheme="system" forcedTheme={Theme} attribute="class" >
+    <ThemeProvider defaultTheme="system" forcedTheme={Theme} attribute="class">
       <Layout pageProps={pageProps}>
         <Component {...pageProps} />
       </Layout>

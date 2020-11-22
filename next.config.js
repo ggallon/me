@@ -2,7 +2,7 @@ const bundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: !!process.env.BUNDLE_ANALYZE,
 })
 
-const prod = process.env.NODE_ENV == "production"
+const prod = process.env.NODE_ENV == 'production'
 
 function getCsp() {
   let csp = ''
@@ -17,7 +17,9 @@ function getCsp() {
   csp += `object-src 'none'; `
   csp += `prefetch-src 'self'; `
   // NextJS requires 'unsafe-eval' in dev
-  csp += `script-src 'self' ${prod ? "" : "'unsafe-eval'"} 'unsafe-inline' vitals.vercel-analytics.com; `
+  csp += `script-src 'self' ${
+    prod ? '' : "'unsafe-eval'"
+  } 'unsafe-inline' vitals.vercel-analytics.com; `
   // NextJS requires 'unsafe-inline' in dev
   csp += `style-src ${prod ? "'self'" : "'unsafe-inline'"}; `
   csp += `worker-src 'self'; `
@@ -29,7 +31,7 @@ function getCsp() {
   /* Other directives */
   csp += prod ? `block-all-mixed-content; ` : ''
   csp += prod ? `upgrade-insecure-requests;` : ''
-  return csp;
+  return csp
 }
 
 module.exports = bundleAnalyzer({
