@@ -1,9 +1,10 @@
 const prod = process.env.NODE_ENV == 'production'
+const vercelVitalsUrl = 'vitals.vercel-analytics.com'
 
 function getCsp() {
   let csp = ''
   /* fetch directives */
-  csp += `connect-src 'self'; `
+  csp += `connect-src 'self' ${vercelVitalsUrl}; `
   csp += `default-src 'self'; `
   csp += `font-src 'self'; `
   csp += `frame-src 'self'; `
@@ -15,7 +16,7 @@ function getCsp() {
   // NextJS requires 'unsafe-eval' in dev
   csp += `script-src 'self' ${
     prod ? '' : "'unsafe-eval'"
-  } 'unsafe-inline' vitals.vercel-analytics.com; `
+  } 'unsafe-inline' ${vercelVitalsUrl}; `
   // NextJS requires 'unsafe-inline' in dev
   csp += `style-src ${prod ? "'self'" : "'unsafe-inline'"}; `
   csp += `worker-src 'self'; `
