@@ -25,11 +25,11 @@ function getCsp() {
     /* Document directives */
     `base-uri 'self'`,
     /* Navigation directives */
-   `form-action 'self'`,
-   `frame-ancestors 'self'`,
-   /* Other directives */
-   prod ? `block-all-mixed-content` : '',
-   prod ? `upgrade-insecure-requests;` : ''
+    `form-action 'self'`,
+    `frame-ancestors 'self'`,
+    /* Other directives */
+    prod ? `block-all-mixed-content` : '',
+    prod ? `upgrade-insecure-requests;` : ''
   ]
 
   return csp.join('; ')
