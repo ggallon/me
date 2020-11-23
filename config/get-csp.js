@@ -4,9 +4,7 @@ const vercelVitalsUrl = 'vitals.vercel-analytics.com'
 function getCsp() {
   const csp = [
     /* fetch directives */
-    `connect-src 'self' ${
-      prod ? vercelVitalsUrl : ''
-    }`,
+    `connect-src 'self' ${prod ? vercelVitalsUrl : ''}`,
     `default-src 'self'`,
     `font-src 'self'`,
     `frame-src 'self'`,
@@ -29,7 +27,7 @@ function getCsp() {
     `frame-ancestors 'self'`,
     /* Other directives */
     prod ? `block-all-mixed-content` : '',
-    prod ? `upgrade-insecure-requests;` : ''
+    prod ? `upgrade-insecure-requests;` : '',
   ]
 
   return csp.join('; ')
