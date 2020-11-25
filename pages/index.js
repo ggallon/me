@@ -3,7 +3,7 @@ import { useTheme } from 'next-themes'
 import SEO from '@components/seo'
 import styles from '@assets/Home.module.css'
 
-export default function Home() {
+export default function Home({ title }) {
   const { theme, setTheme } = useTheme()
 
   return (
@@ -21,7 +21,7 @@ export default function Home() {
             setTheme(theme === 'light' ? 'dark' : 'light')
           }}
         >
-          Change theme to
+          {title}
           {theme === 'light' ? (
             <svg
               className="ml-2 -mr-0.5 h-4 w-4"
@@ -66,4 +66,21 @@ export default function Home() {
       </main>
     </div>
   )
+}
+
+export async function getStaticProps({ locale }) {
+  console.log('locale :', locale)
+
+  const titles = {
+    fr: 'Changer thème pour',
+    en: 'Change theme to',
+  }
+
+  const title = titles[locale]
+
+  return {
+    props: {
+      title,
+    },
+  }
 }

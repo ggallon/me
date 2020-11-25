@@ -6,6 +6,11 @@ const bundleAnalyzer = require('@next/bundle-analyzer')({
 module.exports = bundleAnalyzer({
   reactStrictMode: true,
 
+  i18n: {
+    locales: ['en', 'fr'],
+    defaultLocale: 'fr',
+  },
+
   async headers() {
     return [
       {
