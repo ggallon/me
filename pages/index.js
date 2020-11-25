@@ -69,8 +69,6 @@ export default function Home({ title }) {
 }
 
 export async function getStaticProps({ locale }) {
-  console.log('locale :', locale)
-
   const titles = {
     fr: 'Changer thème pour',
     en: 'Change theme to',
