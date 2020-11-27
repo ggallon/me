@@ -1,7 +1,6 @@
 import { isProd, isDev } from '@utils/get-env'
 
 export const getAbsoluteURL = (path, lang) => {
-  console.log('isProd', isProd)
   const baseURL = isProd
     ? 'https://gwenaelgallon.fr'
     : isDev
