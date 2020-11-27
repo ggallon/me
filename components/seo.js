@@ -1,6 +1,16 @@
 import Head from 'next/head'
+import { useRouter } from 'next/router'
+
+const isProd = process.env.NODE_ENV === 'production'
 
 export default function SEO() {
+  const router = useRouter()
+  const isDefaultLocale = router.defaultLocale === router.locale
+  const baseURL = isProd
+    ? `https://${process.env.VERCEL_URL}`
+    : `http://locahost:3000`
+  const pageFrUrl = `${baseURL}${router.pathname}`
+  const pageEnUrl = `${baseURL}/en${router.pathname}`
   const twitterAccount = '@gwengallon'
   const title = 'Gwenaël Gallon'
   const description =
@@ -8,6 +18,8 @@ export default function SEO() {
 
   return (
     <Head>
+      <link rel="canonical" href={isDefaultLocale ? pageFrUrl : pageEnUrl} />
+      <link rel="alternate" href={isDefaultLocale ? pageEnUrl : pageFrUrl} hreflang={isDefaultLocale ? 'en' : 'fr'} />
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="twitter:card" content="summary_large_image" />
@@ -16,8 +28,8 @@ export default function SEO() {
       <meta property="og:title" content={title} />
       <meta property="og:type" content="website" />
       <meta property="og:description" content={description} />
-      <meta property="og:url" content="https://gwenaelgallon.fr" />
-      <meta property="og:image" content="https://gwenaelgallon.fr/og.png" />
+      <meta property="og:url" content={isDefaultLocale ? pageFrUrl : pageEnUrl} />
+      <meta property="og:image" content={`${baseURL}/og.png`} />
       <meta property="og:image:width" content="1280" />
       <meta property="og:image:height" content="720" />
     </Head>
