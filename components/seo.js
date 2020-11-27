@@ -3,6 +3,11 @@ import { useRouter } from 'next/router'
 
 const isProd = process.env.NODE_ENV === 'production'
 
+export const getAbsoluteURL = (path) => {
+  const baseURL = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000"
+  return baseURL + path
+}
+
 export default function SEO() {
   console.log(process.env)
   const router = useRouter()
@@ -30,7 +35,7 @@ export default function SEO() {
       <meta property="og:type" content="website" />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={isDefaultLocale ? pageFrUrl : pageEnUrl} />
-      <meta property="og:image" content={`${baseURL}/og.png`} />
+      <meta property="og:image" content={getAbsoluteURL('/og.png')} />
       <meta property="og:image:width" content="1280" />
       <meta property="og:image:height" content="720" />
     </Head>
