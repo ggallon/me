@@ -4,17 +4,17 @@ import { useRouter } from 'next/router'
 const isProd = process.env.NODE_ENV === 'production'
 
 export const getAbsoluteURL = (path) => {
-  const baseURL = process.env.VERCEL_URL ? `https://${process.env.TEST_VERCEL_URL}` : "http://localhost:3000"
+  const baseURL = process.env.APP_URL ? `https://${process.env.APP_URL}` : "http://localhost:3000"
   return baseURL + path
 }
 
 export default function SEO() {
   console.log(process.env)
-  console.log('ME ', process.env.TEST_VERCEL_URL)
+  console.log('ME ', process.env.APP_URL)
   const router = useRouter()
   const isDefaultLocale = router.defaultLocale === router.locale
   const baseURL = isProd
-    ? `https://${process.env.VERCEL_URL}`
+    ? `https://${process.env.APP_URL}`
     : `http://locahost:3000`
   const pageFrUrl = `${baseURL}${router.pathname}`
   const pageEnUrl = `${baseURL}/en${router.pathname}`
