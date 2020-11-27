@@ -10,6 +10,7 @@ export const getAbsoluteURL = (path) => {
 
 export default function SEO() {
   console.log(process.env)
+  console.log('ME ', process.env.TEST_VERCEL_URL)
   const router = useRouter()
   const isDefaultLocale = router.defaultLocale === router.locale
   const baseURL = isProd
