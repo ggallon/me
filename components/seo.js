@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 const isProd = process.env.NODE_ENV === 'production'
 
 export default function SEO() {
+  console.log(process.env)
   const router = useRouter()
   const isDefaultLocale = router.defaultLocale === router.locale
   const baseURL = isProd
