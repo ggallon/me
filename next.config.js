@@ -6,11 +6,6 @@ const bundleAnalyzer = require('@next/bundle-analyzer')({
 module.exports = bundleAnalyzer({
   reactStrictMode: true,
 
-  i18n: {
-    locales: ['en', 'fr'],
-    defaultLocale: 'fr',
-  },
-
   env: {
     APP_URL: process.env.VERCEL_URL,
   },

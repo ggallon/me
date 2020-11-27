@@ -4,9 +4,7 @@ import { getAbsoluteURL } from '@utils/get-absolute-url'
 
 export default function SEO() {
   const router = useRouter()
-  const isDefaultLocale = router.defaultLocale === router.locale
-  const pageFrUrl = getAbsoluteURL(router.pathname)
-  const pageEnUrl = getAbsoluteURL(router.pathname, 'en')
+  const pageUrl = getAbsoluteURL(router.pathname)
   const twitterAccount = '@gwengallon'
   const title = 'Gwenaël Gallon'
   const description =
@@ -14,12 +12,7 @@ export default function SEO() {
 
   return (
     <Head>
-      <link rel="canonical" href={isDefaultLocale ? pageFrUrl : pageEnUrl} />
-      <link
-        rel="alternate"
-        href={isDefaultLocale ? pageEnUrl : pageFrUrl}
-        hreflang={isDefaultLocale ? 'en' : 'fr'}
-      />
+      <link rel="canonical" href={pageUrl} />
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="twitter:card" content="summary_large_image" />
@@ -28,11 +21,8 @@ export default function SEO() {
       <meta property="og:title" content={title} />
       <meta property="og:type" content="website" />
       <meta property="og:description" content={description} />
-      <meta
-        property="og:url"
-        content={isDefaultLocale ? pageFrUrl : pageEnUrl}
-      />
-      <meta property="og:image" content={getAbsoluteURL('/og.png')} />
+      <meta property="og:url" content={pageUrl} />
+      <meta property="og:image" content={`${pageUrl}/og.png`} />
       <meta property="og:image:width" content="1280" />
       <meta property="og:image:height" content="720" />
     </Head>
