@@ -11,6 +11,10 @@ module.exports = bundleAnalyzer({
     defaultLocale: 'fr',
   },
 
+  env: {
+    'APP_URL': process.env.VERCEL_URL,
+  },
+
   async headers() {
     return [
       {

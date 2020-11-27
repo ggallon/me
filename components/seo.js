@@ -1,16 +1,12 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-
-const isProd = process.env.NODE_ENV === 'production'
+import { getAbsoluteURL } from '@utils/get-absolute-url'
 
 export default function SEO() {
   const router = useRouter()
   const isDefaultLocale = router.defaultLocale === router.locale
-  const baseURL = isProd
-    ? `https://${process.env.VERCEL_URL}`
-    : `http://locahost:3000`
-  const pageFrUrl = `${baseURL}${router.pathname}`
-  const pageEnUrl = `${baseURL}/en${router.pathname}`
+  const pageFrUrl = getAbsoluteURL(router.pathname)
+  const pageEnUrl = getAbsoluteURL(router.pathname, 'en')
   const twitterAccount = '@gwengallon'
   const title = 'Gwenaël Gallon'
   const description =
@@ -29,7 +25,7 @@ export default function SEO() {
       <meta property="og:type" content="website" />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={isDefaultLocale ? pageFrUrl : pageEnUrl} />
-      <meta property="og:image" content={`${baseURL}/og.png`} />
+      <meta property="og:image" content={getAbsoluteURL('/og.png')} />
       <meta property="og:image:width" content="1280" />
       <meta property="og:image:height" content="720" />
     </Head>
