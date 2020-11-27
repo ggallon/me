@@ -1,10 +1,10 @@
-const prod = process.env.NODE_ENV == 'production'
+import { isProd, isDev } from '@utils/get-env'
 const vercelVitalsUrl = 'vitals.vercel-analytics.com'
 
 function getCsp() {
   const csp = [
     /* fetch directives */
-    `connect-src 'self' ${prod ? vercelVitalsUrl : ''}`,
+    `connect-src 'self' ${isProd ? vercelVitalsUrl : ''}`,
     `default-src 'self'`,
     `font-src 'self'`,
     `frame-src 'self'`,
@@ -14,11 +14,11 @@ function getCsp() {
     `object-src 'none'`,
     `prefetch-src 'self'`,
     // NextJS requires 'unsafe-eval' in dev
-    `script-src 'self' ${
-      prod ? '' : "'unsafe-eval'"
-    } 'unsafe-inline' ${vercelVitalsUrl}`,
+    `script-src 'self' ${vercelVitalsUrl} ${
+      isDev ? "'unsafe-eval'" : ''
+    } 'unsafe-inline' `,
     // NextJS requires 'unsafe-inline' in dev
-    `style-src ${prod ? "'self'" : "'unsafe-inline'"}`,
+    `style-src ${isDev ? "'unsafe-inline'" : "'self'"}`,
     `worker-src 'self'`,
     /* Document directives */
     `base-uri 'self'`,
@@ -26,8 +26,8 @@ function getCsp() {
     `form-action 'self'`,
     `frame-ancestors 'self'`,
     /* Other directives */
-    prod ? `block-all-mixed-content` : '',
-    prod ? `upgrade-insecure-requests;` : '',
+    isProd ? `block-all-mixed-content` : '',
+    isProd ? `upgrade-insecure-requests;` : '',
   ]
 
   return csp.join('; ')
