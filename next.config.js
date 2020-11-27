@@ -12,7 +12,7 @@ module.exports = bundleAnalyzer({
   },
 
   env: {
-    'APP_URL': process.env.VERCEL_URL,
+    APP_URL: process.env.VERCEL_URL,
   },
 
   async headers() {
