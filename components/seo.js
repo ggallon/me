@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 const isProd = process.env.NODE_ENV === 'production'
 
 export const getAbsoluteURL = (path) => {
-  const baseURL = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000"
+  const baseURL = process.env.VERCEL_URL ? `https://${process.env.TEST_VERCEL_URL}` : "http://localhost:3000"
   return baseURL + path
 }
 
