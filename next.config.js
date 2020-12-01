@@ -14,6 +14,7 @@ module.exports = bundleAnalyzer({
     return [
       {
         source: '/(.*)',
+        locale: false,
         headers: [
           {
             key: 'Content-Security-Policy',
@@ -39,6 +40,7 @@ module.exports = bundleAnalyzer({
       },
       {
         source: '/_next/static/(.*)',
+        locale: false,
         headers: [
           {
             key: 'Vary',
@@ -46,6 +48,16 @@ module.exports = bundleAnalyzer({
           },
         ],
       },
+      {
+        source: '/(.jpg|.png|.webp|.gif)',
+        locale: false,
+        headers: [
+          {
+            key: 'cache-control',
+            value: 'public,max-age=31536000,immutable',
+          },
+        ],
+      }
     ]
   },
 })
