@@ -57,7 +57,7 @@ module.exports = bundleAnalyzer({
             value: 'public,max-age=31536000,immutable',
           },
         ],
-      }
+      },
     ]
   },
 })
