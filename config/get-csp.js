@@ -6,7 +6,7 @@ function getCsp() {
     /* fetch directives */
     `connect-src 'self' ${prod ? vercelVitalsUrl : ''}`,
     `default-src 'self'`,
-    `font-src 'self'`,
+    `font-src 'self' https://fonts.gstatic.com/`,
     `frame-src 'self'`,
     `img-src 'self'`,
     `manifest-src 'self'`,
@@ -18,7 +18,11 @@ function getCsp() {
       prod ? '' : "'unsafe-eval'"
     } 'unsafe-inline' ${vercelVitalsUrl}`,
     // NextJS requires 'unsafe-inline' in dev
-    `style-src ${prod ? "'self'" : "'unsafe-inline'"}`,
+    `style-src ${
+      prod
+        ? "'self' https://fonts.googleapis.com/"
+        : "'unsafe-inline' https://fonts.googleapis.com/"
+    }`,
     `worker-src 'self'`,
     /* Document directives */
     `base-uri 'self'`,

@@ -18,7 +18,8 @@ export default function Custom404() {
                 La page est introuvable.
               </h1>
               <p className="mt-1 text-base text-gray-500">
-                L'URL est peut-être mal orthographié ou la page que vous recherchez n'est plus disponible.
+                L'URL est peut-être mal orthographié ou la page que vous
+                recherchez n'est plus disponible.
               </p>
             </div>
             <div className="mt-10 flex space-x-3 sm:border-l sm:border-transparent sm:pl-6">

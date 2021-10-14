@@ -11,7 +11,7 @@ export default function Home() {
       <SEO />
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Gwenaël Gallon</h1>
+        <h1 className="m-0 text-center text-6xl">Gwenaël Gallon</h1>
 
         <button
           type="button"
