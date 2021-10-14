@@ -18,7 +18,7 @@ module.exports = bundleAnalyzer({
         headers: [
           {
             key: 'X-DNS-Prefetch-Control',
-            value: 'on'
+            value: 'on',
           },
           {
             key: 'X-XSS-Protection',
@@ -26,7 +26,7 @@ module.exports = bundleAnalyzer({
           },
           {
             key: 'X-Frame-Options',
-            value: 'SAMEORIGIN'
+            value: 'SAMEORIGIN',
           },
           {
             key: 'X-Content-Type-Options',
@@ -34,7 +34,7 @@ module.exports = bundleAnalyzer({
           },
           {
             key: 'Referrer-Policy',
-            value: 'origin-when-cross-origin'
+            value: 'origin-when-cross-origin',
           },
           {
             key: 'Content-Security-Policy',
