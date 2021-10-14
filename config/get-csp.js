@@ -20,7 +20,7 @@ function getCsp() {
     // NextJS requires 'unsafe-inline' in dev
     `style-src ${
       prod
-        ? "'self' https://fonts.googleapis.com/"
+        ? "'self' 'unsafe-inline' https://fonts.googleapis.com/"
         : "'unsafe-inline' https://fonts.googleapis.com/"
     }`,
     `worker-src 'self'`,
