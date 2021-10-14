@@ -1,5 +1,5 @@
 const prod = process.env.NODE_ENV == 'production'
-const vercelVitalsUrl = 'vitals.vercel-analytics.com'
+const vercelVitalsUrl = 'vitals.vercel-insights.com'
 
 function getCsp() {
   const csp = [
