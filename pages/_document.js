@@ -26,7 +26,8 @@ export default function Document() {
           type="image/png"
         />
         <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="#ffffff" />
+        <meta content="#ffffff" name="theme-color" />
+        <meta content="#ffffff" name="msapplication-TileColor" />
       </Head>
       <body className="bg-white dark:bg-black text-black dark:text-white">
         <Main />
