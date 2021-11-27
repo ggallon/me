@@ -4,6 +4,7 @@ const bundleAnalyzer = require('@next/bundle-analyzer')({
 })
 
 module.exports = bundleAnalyzer({
+  swcMinify: true,
   reactStrictMode: true,
 
   env: {
