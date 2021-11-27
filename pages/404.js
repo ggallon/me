@@ -18,14 +18,14 @@ export default function Custom404() {
                 La page est introuvable.
               </h1>
               <p className="mt-1 text-base text-gray-500">
-                L`&apos;`aposURL est peut-être mal orthographié ou la page que vous
-                recherchez n`&apos;`est plus disponible.
+                L&apos;URL est peut-être mal orthographié ou la page que vous
+                recherchez n&apos;est plus disponible.
               </p>
             </div>
             <div className="mt-10 flex space-x-3 sm:border-l sm:border-transparent sm:pl-6">
               <Link href="/">
                 <a className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
-                  Retour à l`&apos;`accueil
+                  Retour à l&apos;accueil
                 </a>
               </Link>
             </div>
