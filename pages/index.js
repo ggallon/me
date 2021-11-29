@@ -1,7 +1,7 @@
 import { useTheme } from 'next-themes'
 
-import SEO from '@components/seo'
-import styles from '@assets/Home.module.css'
+import SEO from '@/components/seo'
+import styles from '@/assets/Home.module.css'
 
 export default function Home() {
   const { theme, setTheme } = useTheme()

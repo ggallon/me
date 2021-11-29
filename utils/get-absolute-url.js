@@ -1,4 +1,4 @@
-import { isProd, isDev } from '@utils/get-env'
+import { isProd, isDev } from '@/utils/get-env'
 
 export const getAbsoluteURL = (path, lang) => {
   const baseURL = isProd

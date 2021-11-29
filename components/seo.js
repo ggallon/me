@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { getAbsoluteURL } from '@utils/get-absolute-url'
+import { getAbsoluteURL } from '@/utils/get-absolute-url'
 
 export default function SEO() {
   const router = useRouter()
