@@ -1,6 +1,6 @@
 import { ThemeProvider } from 'next-themes'
 
-import '@assets/main.css'
+import '@/assets/main.css'
 
 const Noop = ({ children }) => <>{children}</>
 
