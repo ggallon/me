@@ -6,10 +6,6 @@ const bundleAnalyzer = require('@next/bundle-analyzer')({
 module.exports = bundleAnalyzer({
   swcMinify: true,
   reactStrictMode: true,
-  experimental: {
-    legacyBrowsers: false,
-    browsersListForSwc: true,
-  },
 
   env: {
     APP_URL: process.env.VERCEL_URL,
