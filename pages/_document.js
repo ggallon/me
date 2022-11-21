@@ -5,10 +5,6 @@ export default function Document() {
     <Html>
       <Head>
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=optional"
-          rel="stylesheet"
-        />
-        <link
           href="/apple-touch-icon.png"
           rel="apple-touch-icon"
           sizes="180x180"

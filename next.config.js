@@ -7,8 +7,10 @@ module.exports = bundleAnalyzer({
   swcMinify: true,
   reactStrictMode: true,
 
-  env: {
-    APP_URL: process.env.VERCEL_URL,
+  experimental: {
+    fontLoaders: [
+      { loader: '@next/font/google', options: { subsets: ['latin'] } },
+    ],
   },
 
   async headers() {
