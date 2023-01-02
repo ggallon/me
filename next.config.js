@@ -30,7 +30,7 @@ const ContentSecurityPolicy = `
     font-src 'self';
     img-src * blob: data:;
     script-src 'self' 'unsafe-inline' 'unsafe-eval' ${process.env.VERCEL_ENV === 'preview' && 'vercel.live'} ${process.env.NODE_ENV === 'development' && 'cdn.vercel-insights.com'};
-    style-src 'self' ${process.env.NODE_ENV === 'development' && `'unsafe-inline'`};
+    style-src 'self' ${process.env.NODE_ENV === 'development' || process.env.VERCEL_ENV === 'preview' && `'unsafe-inline'`};
 `
 
 const securityHeaders = [
