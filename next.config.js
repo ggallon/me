@@ -26,13 +26,11 @@ module.exports = bundleAnalyzer({
 
 // https://nextjs.org/docs/advanced-features/security-headers
 const ContentSecurityPolicy = `
-    connect-src *;
     default-src 'self';
     font-src 'self';
     img-src * blob: data:;
-    media-src 'none';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline';
-    style-src 'self';
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' ${process.env.VERCEL_ENV === 'preview' && 'vercel.live'} ${process.env.NODE_ENV === 'development' && 'cdn.vercel-insights.com'};
+    style-src 'self' ${process.env.NODE_ENV === 'development' && `'unsafe-inline'`};
 `
 
 const securityHeaders = [
