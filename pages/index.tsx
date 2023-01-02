@@ -1,8 +1,8 @@
-import { Suspense } from 'react';
+import { Suspense } from 'react'
 import { useTheme } from 'next-themes'
 
-import SEO from '@/components/seo'
-import styles from '@/assets/Home.module.css'
+import SEO from '#/components/seo'
+import styles from '#/assets/Home.module.css'
 
 export default function Home() {
   const { theme, setTheme } = useTheme()
@@ -46,8 +46,8 @@ export default function Home() {
                 aria-hidden="true"
               >
                 <g
-                  strokeLinejoin="full"
-                  strokeLinecap="full"
+                  strokeLinejoin="round"
+                  strokeLinecap="round"
                   strokeWidth="2"
                   fill="none"
                   stroke="currentColor"

@@ -1,6 +1,6 @@
-import { isProd, isDev } from '@/utils/get-env'
+import { isProd, isDev } from '#/utils/get-env'
 
-export const getAbsoluteURL = (path, lang) => {
+export const getAbsoluteURL = (path?: string, lang?: string) => {
   const baseURL = isProd
     ? 'https://gwenaelgallon.fr'
     : isDev
