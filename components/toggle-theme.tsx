@@ -10,7 +10,7 @@ export function ToggleTheme() {
   const [selected, setSelected] = useState(theme)
 
   return (
-    <div className="mt-4 w-32">
+    <div className="w-36">
       <Listbox
         value={selected}
         onChange={(value) => {
@@ -53,7 +53,7 @@ export function ToggleTheme() {
                   </>
                 )}
               </svg>
-              <span className="block truncate capitalize dark:text-black">
+              <span className="block truncate capitalize text-sm dark:text-black">
                 {selected}
               </span>
             </div>
@@ -84,8 +84,8 @@ export function ToggleTheme() {
                   {({ selected }) => (
                     <>
                       <span
-                        className={`block truncate capitalize ${
-                          selected ? 'font-medium' : 'font-normal'
+                        className={`block truncate text-sm capitalize ${
+                          selected ? 'font-bold' : 'font-normal'
                         }`}
                       >
                         {theme}

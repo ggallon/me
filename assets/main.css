@@ -2,6 +2,10 @@
 
 /* Write your own custom base styles here */
 
+#__next {
+  min-height: 100%;
+}
+
 @tailwind components;
 
 /* Write your own custom component styles here */
