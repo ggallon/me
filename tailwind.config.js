@@ -9,7 +9,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', ...fontFamily.sans],
+        sans: [
+          `var(--font-inter), ${fontFamily.sans.join(', ')}`,
+          { fontFeatureSettings: '"cv05", "cv06"' }
+        ],
       },
     },
   },

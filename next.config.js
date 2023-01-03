@@ -8,12 +8,6 @@ const bundleAnalyzer = require('@next/bundle-analyzer')({
 module.exports = bundleAnalyzer({
   reactStrictMode: true,
 
-  experimental: {
-    fontLoaders: [
-      { loader: '@next/font/google', options: { subsets: ['latin'] } },
-    ],
-  },
-
   async headers() {
     return [
       {
