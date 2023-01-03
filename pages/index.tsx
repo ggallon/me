@@ -1,5 +1,4 @@
-import { Suspense } from 'react'
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import SEO from '#/components/seo'
 import { ToggleTheme } from '#/components/toggle-theme'
 

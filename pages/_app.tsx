@@ -1,6 +1,7 @@
 import { Inter } from '@next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { ThemeProvider } from 'next-themes'
+
 import type { AppProps } from 'next/app'
 import '#/assets/main.css'
 
