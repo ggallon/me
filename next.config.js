@@ -28,17 +28,24 @@ module.exports = bundleAnalyzer({
 const ContentSecurityPolicy = `
     default-src 'self';
     font-src 'self';
-    ${process.env.VERCEL_ENV === 'preview' && 'frame-src vercel.live;'}
+    ${process.env.VERCEL_ENV === 'preview' ? 'frame-src vercel.live;' : ''}
     img-src * blob: data:;
-    script-src 'self' 'unsafe-inline' 'unsafe-eval' ${process.env.VERCEL_ENV === 'preview' && 'vercel.live'} ${process.env.NODE_ENV === 'development' && 'cdn.vercel-insights.com'};
-    style-src 'self' ${process.env.NODE_ENV === 'development' || process.env.VERCEL_ENV === 'preview' && `'unsafe-inline'`};
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' ${
+      process.env.VERCEL_ENV === 'preview' && 'vercel.live'
+    } ${process.env.NODE_ENV === 'development' && 'cdn.vercel-insights.com'};
+    style-src 'self' ${
+      process.env.NODE_ENV === 'development' ||
+      process.env.VERCEL_ENV === 'preview'
+        ? `'unsafe-inline'`
+        : ''
+    };
 `
 
 const securityHeaders = [
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
   {
     key: 'Content-Security-Policy',
-    value: ContentSecurityPolicy.replace(/\n/g, ''),
+    value: ContentSecurityPolicy.replace(/\n/g, '').replace(/\s+/g, ' ').trim(),
   },
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
   {
