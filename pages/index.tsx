@@ -14,7 +14,9 @@ export default function Home() {
           <h1 className="mb-10 text-center text-6xl font-medium sm:mb-6">
             Gwenaël Gallon
           </h1>
-          {mounted && <ToggleTheme />}
+          {mounted ? <ToggleTheme isShowing={mounted} /> : (
+            <div className="w-36 h-9"></div>
+          )}
         </div>
       </Suspense>
     </>
