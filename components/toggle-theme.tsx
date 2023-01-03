@@ -53,7 +53,7 @@ export function ToggleTheme() {
                   </>
                 )}
               </svg>
-              <span className="block truncate capitalize text-sm dark:text-black">
+              <span className="block truncate text-sm capitalize dark:text-black">
                 {selected}
               </span>
             </div>
