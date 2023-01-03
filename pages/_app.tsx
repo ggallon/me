@@ -6,6 +6,7 @@ import '#/assets/main.css'
 
 const interVariable = localFont({
   src: '../assets/fonts/Inter-roman-latin.var.woff2',
+  weight: '100 900',
   variable: '--font-inter',
 })
 

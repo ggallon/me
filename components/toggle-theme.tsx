@@ -5,12 +5,22 @@ import { Fragment, useState } from 'react'
 
 const themes = ['system', 'dark', 'light']
 
-export function ToggleTheme() {
+export function ToggleTheme({ isShowing }: { isShowing: boolean }) {
   const { theme, setTheme } = useTheme()
   const [selected, setSelected] = useState(theme)
 
   return (
-    <div className="w-36">
+    <Transition
+      className="w-36"
+      appear={true}
+      show={isShowing}
+      enter="transition-opacity duration-1000"
+      enterFrom="opacity-0"
+      enterTo="opacity-100"
+      leave="transition-opacity duration-300"
+      leaveFrom="opacity-100"
+      leaveTo="opacity-0"
+    >
       <Listbox
         value={selected}
         onChange={(value) => {
@@ -85,7 +95,7 @@ export function ToggleTheme() {
                     <>
                       <span
                         className={`block truncate text-sm capitalize ${
-                          selected ? 'font-bold' : 'font-normal'
+                          selected ? 'font-medium' : 'font-normal'
                         }`}
                       >
                         {theme}
@@ -103,6 +113,6 @@ export function ToggleTheme() {
           </Transition>
         </div>
       </Listbox>
-    </div>
+    </Transition>
   )
 }

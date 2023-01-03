@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Balancer from 'react-wrap-balancer'
 
 export default function Custom404() {
   return (
-    <div className="min-h-screen bg-white px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
+    <div className="min-h-screen bg-white px-8 py-16 sm:px-10 sm:py-24 md:grid md:place-items-center lg:px-8">
       <Head>
         <title>Page introuvable - Gwenaël Gallon</title>
       </Head>
@@ -17,9 +18,9 @@ export default function Custom404() {
               <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
                 La page est introuvable.
               </h1>
-              <p className="mt-1 text-base text-gray-500">
-                L&apos;URL est peut-être mal orthographié ou la page que vous
-                recherchez n&apos;est plus disponible.
+              <p className="mt-2 text-base text-gray-500">
+                <Balancer>L&apos;URL est peut-être mal orthographié ou la page que vous
+                recherchez n&apos;est plus disponible.</Balancer>
               </p>
             </div>
             <div className="mt-10 flex space-x-3 sm:border-l sm:border-transparent sm:pl-6">
