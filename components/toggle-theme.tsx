@@ -3,7 +3,7 @@ import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 import { useTheme } from 'next-themes'
 import { Fragment, useState } from 'react'
 
-const themes = ['system', 'light', 'dark']
+const themes = ['system', 'dark', 'light']
 
 export function ToggleTheme() {
   const { theme, setTheme } = useTheme()
