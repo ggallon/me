@@ -1,7 +1,7 @@
-import { useTheme } from 'next-themes'
-import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
+import { useTheme } from 'next-themes'
+import { Fragment, useState } from 'react'
 
 const themes = ['system', 'light', 'dark']
 
@@ -10,7 +10,7 @@ export function ToggleTheme() {
   const [selected, setSelected] = useState(theme)
 
   return (
-    <div className="w-32 mt-4">
+    <div className="mt-4 w-32">
       <Listbox
         value={selected}
         onChange={(value) => {

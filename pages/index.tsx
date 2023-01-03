@@ -1,8 +1,7 @@
 import { Suspense } from 'react'
 import { useEffect, useState } from 'react'
-
-import { ToggleTheme } from '#/components/toggle-theme'
 import SEO from '#/components/seo'
+import { ToggleTheme } from '#/components/toggle-theme'
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -12,9 +11,9 @@ export default function Home() {
     <>
       <SEO />
       <Suspense fallback={null}>
-        <div className="flex flex-col items-center justify-center min-h-screen">
+        <div className="flex min-h-screen flex-col items-center justify-center">
           <div>
-            <h1 className="m-0 text-center font-medium text-6xl">
+            <h1 className="m-0 text-center text-6xl font-medium">
               Gwenaël Gallon
             </h1>
             {mounted && <ToggleTheme />}
